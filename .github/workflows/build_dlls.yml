@@ -187,7 +187,7 @@ jobs:
       uses: actions/cache@v4
       with:
         path: ${{ github.workspace }}/OpenMS/contrib
-        key: ${{ runner.os }}-contrib3
+        key: ${{ runner.os }}-contrib3-vs2022-2026-03-25
     
     - name: Download contrib build from archive (Windows)
       if: startsWith(matrix.os, 'windows') && steps.cache-contrib.outputs.cache-hit != 'true'
@@ -197,7 +197,7 @@ jobs:
       run: |
           cd OpenMS/contrib
           # Download the file using the URL fetched from GitHub
-          gh release download -R OpenMS/contrib --pattern 'contrib_build-Windows.tar.gz'
+          gh release download 2026-03-25-183345 -R OpenMS/contrib --pattern 'contrib_build-Windows.tar.gz'
           # Extract the archive
           7z x -so contrib_build-Windows.tar.gz | 7z x -si -ttar
           rm contrib_build-Windows.tar.gz
