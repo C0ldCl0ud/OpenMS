@@ -12,6 +12,7 @@ on:
       - flashida-v9-bridge
       - august_pre
       - processscan-cleanup
+      - build/flashida-windows
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
